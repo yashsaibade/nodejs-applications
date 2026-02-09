@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    
     environment {
         MONGODB_URL  = credentials('MONGODB_URL')
         JWTSECRETE = credentials('JWTSECRETE')
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'master',
+                git branch: 'main',
                     url: 'https://github.com/yashsaibade/nodejs-applications.git'
             }
         }
