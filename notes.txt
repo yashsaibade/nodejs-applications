@@ -1,0 +1,11 @@
+download libraries
+1) express
+2) mongoose
+3) cors
+4) dotenv
+5) bcryptjs
+6) nodemailer
+7) jsonwebtoken
+8) zod
+
+    npm install express mongoose cors dotenv bcryptjs nodemailer jsonwebtoken zod
