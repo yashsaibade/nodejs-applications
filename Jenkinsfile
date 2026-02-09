@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     environment {
         MONGODB_URL  = credentials('MONGODB_URL')
         JWTSECRETE = credentials('JWTSECRETE')
@@ -9,16 +9,6 @@ pipeline {
         PASSWORD   = credentials('PASSWORD')
         PORT       = "5000"
     }
-
-    stages {
-
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/yashsaibade/nodejs-applications.git'
-            }
-        }
-
         stage('Docker Build') {
             steps {
                 sh '''
@@ -43,7 +33,6 @@ pipeline {
                   -e PASSWORD="$PASSWORD"  \
                   node-backend-app
                 '''
-            }
         }
     }
 }
